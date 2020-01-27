@@ -1,4 +1,4 @@
-use std::string::ToString;
+pub use std::string::ToString;
 
 /// Take an item that implements ToString and return in red
 ///
