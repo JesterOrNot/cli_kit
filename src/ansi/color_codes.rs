@@ -95,3 +95,34 @@ pub fn yellow<T: ToString>(text: T) -> String {
 pub fn yellow_bold<T: ToString>(text: T) -> String {
     "\x1b[1;33m".to_owned() + &text.to_string() + "\x1b[0m"
 }
+/// Take an item that implements ToString and return in blue
+///
+/// Example
+///
+/// ```rust
+///
+/// use cli_kit::ansi::color_codes::blue;
+///
+/// fn main() {
+///     println!("{}", blue(5));
+/// }
+/// ```
+pub fn blue<T: ToString>(text: T) -> String {
+    "\x1b[34m".to_owned() + &text.to_string() + "\x1b[0m"
+}
+
+/// Take an item that implements ToString and return in blue bold
+///
+/// Example
+///
+/// ```rust
+///
+/// use cli_kit::ansi::color_codes::blue_bold;
+///
+/// fn main() {
+///     println!("{}", blue_bold(5));
+/// }
+/// ```
+pub fn blue_bold<T: ToString>(text: T) -> String {
+    "\x1b[1;34m".to_owned() + &text.to_string() + "\x1b[0m"
+}
