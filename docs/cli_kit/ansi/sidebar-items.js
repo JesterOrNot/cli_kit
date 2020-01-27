@@ -1,1 +1,1 @@
-initSidebarItems({"mod" : [ [ "color_codes", "" ] ]});
+initSidebarItems({ mod: [["color_codes", ""]] });

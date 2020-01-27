@@ -3,14 +3,14 @@ function getCurrentFilePath() {
   var rootPathParts = window.rootPath.split("/");
   for (var i = 0; i < rootPathParts.length; ++i) {
     if (rootPathParts[i] === "..") {
-      parts.pop()
+      parts.pop();
     }
   }
   var file = window.location.pathname.substring(parts.join("/").length);
   if (file.startsWith("/")) {
-    file = file.substring(1)
+    file = file.substring(1);
   }
-  return file.substring(0, file.length - 5)
+  return file.substring(0, file.length - 5);
 }
 function createDirEntry(elem, parent, fullPath, currentFile, hasFoundFile) {
   var name = document.createElement("div");
@@ -18,9 +18,9 @@ function createDirEntry(elem, parent, fullPath, currentFile, hasFoundFile) {
   fullPath += elem["name"] + "/";
   name.onclick = function() {
     if (hasClass(this, "expand")) {
-      removeClass(this, "expand")
+      removeClass(this, "expand");
     } else {
-      addClass(this, "expand")
+      addClass(this, "expand");
     }
   };
   name.innerText = elem["name"];
@@ -30,10 +30,17 @@ function createDirEntry(elem, parent, fullPath, currentFile, hasFoundFile) {
   folders.className = "folders";
   if (elem.dirs) {
     for (var i = 0; i < elem.dirs.length; ++i) {
-      if (createDirEntry(elem.dirs[i], folders, fullPath, currentFile,
-                         hasFoundFile) === true) {
+      if (
+        createDirEntry(
+          elem.dirs[i],
+          folders,
+          fullPath,
+          currentFile,
+          hasFoundFile
+        ) === true
+      ) {
         addClass(name, "expand");
-        hasFoundFile = true
+        hasFoundFile = true;
       }
     }
   }
@@ -48,16 +55,16 @@ function createDirEntry(elem, parent, fullPath, currentFile, hasFoundFile) {
       if (hasFoundFile === false && currentFile === fullPath + elem.files[i]) {
         file.className = "selected";
         addClass(name, "expand");
-        hasFoundFile = true
+        hasFoundFile = true;
       }
-      files.appendChild(file)
+      files.appendChild(file);
     }
   }
   search.fullPath = fullPath;
   children.appendChild(files);
   parent.appendChild(name);
   parent.appendChild(children);
-  return hasFoundFile === true && currentFile.startsWith(fullPath)
+  return hasFoundFile === true && currentFile.startsWith(fullPath);
 }
 function toggleSidebar() {
   var sidebar = document.getElementById("source-sidebar");
@@ -66,12 +73,12 @@ function toggleSidebar() {
     sidebar.style.left = "";
     this.style.left = "";
     child.innerText = "<";
-    updateLocalStorage("rustdoc-source-sidebar-show", "true")
+    updateLocalStorage("rustdoc-source-sidebar-show", "true");
   } else {
     sidebar.style.left = "-300px";
     this.style.left = "0";
     child.innerText = ">";
-    updateLocalStorage("rustdoc-source-sidebar-show", "false")
+    updateLocalStorage("rustdoc-source-sidebar-show", "false");
   }
 }
 function createSidebarToggle() {
@@ -83,18 +90,18 @@ function createSidebarToggle() {
   var inner2 = document.createElement("div");
   inner2.style.paddingTop = "3px";
   if (getCurrentValue("rustdoc-source-sidebar-show") === "true") {
-    inner2.innerText = "<"
+    inner2.innerText = "<";
   } else {
     inner2.innerText = ">";
-    sidebarToggle.style.left = "0"
+    sidebarToggle.style.left = "0";
   }
   inner1.appendChild(inner2);
   sidebarToggle.appendChild(inner1);
-  return sidebarToggle
+  return sidebarToggle;
 }
 function createSourceSidebar() {
   if (window.rootPath.endsWith("/") === false) {
-    window.rootPath += "/"
+    window.rootPath += "/";
   }
   var main = document.getElementById("main");
   var sidebarToggle = createSidebarToggle();
@@ -102,7 +109,7 @@ function createSourceSidebar() {
   var sidebar = document.createElement("div");
   sidebar.id = "source-sidebar";
   if (getCurrentValue("rustdoc-source-sidebar-show") !== "true") {
-    sidebar.style.left = "-300px"
+    sidebar.style.left = "-300px";
   }
   var currentFile = getCurrentFilePath();
   var hasFoundFile = false;
@@ -112,8 +119,13 @@ function createSourceSidebar() {
   sidebar.appendChild(title);
   Object.keys(sourcesIndex).forEach(function(key) {
     sourcesIndex[key].name = key;
-    hasFoundFile = createDirEntry(sourcesIndex[key], sidebar, "", currentFile,
-                                  hasFoundFile)
+    hasFoundFile = createDirEntry(
+      sourcesIndex[key],
+      sidebar,
+      "",
+      currentFile,
+      hasFoundFile
+    );
   });
-  main.insertBefore(sidebar, main.firstChild)
+  main.insertBefore(sidebar, main.firstChild);
 }

@@ -1,1 +1,1 @@
-initSidebarItems({"mod" : [ [ "ansi", "" ] ]});
+initSidebarItems({ mod: [["ansi", ""]] });

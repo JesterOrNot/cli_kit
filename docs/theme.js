@@ -19,17 +19,19 @@ function switchThemeButtonState() {
   } else {
     showThemeButtonState();
   }
-};
+}
 
 function handleThemeButtonsBlur(e) {
   var active = document.activeElement;
   var related = e.relatedTarget;
 
-  if (active.id !== "themePicker" &&
-      (!active.parentNode || active.parentNode.id !== "theme-choices") &&
-      (!related ||
-       (related.id !== "themePicker" &&
-        (!related.parentNode || related.parentNode.id !== "theme-choices")))) {
+  if (
+    active.id !== "themePicker" &&
+    (!active.parentNode || active.parentNode.id !== "theme-choices") &&
+    (!related ||
+      (related.id !== "themePicker" &&
+        (!related.parentNode || related.parentNode.id !== "theme-choices")))
+  ) {
     hideThemeButtonState();
   }
 }
@@ -37,10 +39,11 @@ function handleThemeButtonsBlur(e) {
 themePicker.onclick = switchThemeButtonState;
 themePicker.onblur = handleThemeButtonsBlur;
 ["dark", "light"].forEach(function(item) {
-  var but = document.createElement('button');
+  var but = document.createElement("button");
   but.innerHTML = item;
-  but.onclick = function(
-      el) { switchTheme(currentTheme, mainTheme, item, true); };
+  but.onclick = function(el) {
+    switchTheme(currentTheme, mainTheme, item, true);
+  };
   but.onblur = handleThemeButtonsBlur;
   themes.appendChild(but);
 });
