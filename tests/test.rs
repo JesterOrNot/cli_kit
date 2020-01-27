@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use cli_kit::ansi::color_codes::*;
+    use cli_kit::ansi::color_codes::{green, green_bold, red, red_bold, yellow, yellow_bold};
     #[test]
     fn test_red() {
         assert_eq!(red(5), "\x1b[31m5\x1b[0m");
