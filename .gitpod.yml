@@ -1,5 +1,14 @@
 tasks:
-  - init: cargo build
+  - init: cargo build --verbose
+    command: cargo test --verbose
+
+github:
+  prebuilds:
+    addBadge: true
+    branches: true
+    pullRequestsFromForks: true
+    addLabel: prebuilt
+
 vscode:
   extensions:
     - hbenl.vscode-test-explorer@2.15.0:koqDUMWDPJzELp/hdS/lWw==
