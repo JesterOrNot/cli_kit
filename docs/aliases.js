@@ -1,2 +1,2 @@
 var ALIASES = {};
-ALIASES["lib"] = {};
+ALIASES["cli_kit"] = {};
