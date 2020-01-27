@@ -95,6 +95,7 @@ pub fn yellow<T: ToString>(text: T) -> String {
 pub fn yellow_bold<T: ToString>(text: T) -> String {
     "\x1b[1;33m".to_owned() + &text.to_string() + "\x1b[0m"
 }
+
 /// Take an item that implements ToString and return in blue
 ///
 /// Example
