@@ -8,7 +8,6 @@ pub fn red_bold<T: ToString>(text: T) -> String {
     "\x1b[1;31m".to_owned() + &text.to_string() + "\x1b[0m"
 }
 
-
 pub fn green<T: ToString>(text: T) -> String {
     "\x1b[32m".to_owned() + &text.to_string() + "\x1b[0m"
 }
