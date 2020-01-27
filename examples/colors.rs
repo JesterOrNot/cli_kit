@@ -1,4 +1,4 @@
-use cli_kit;
+use cli_kit::ansi::color_codes::*;
 fn main() {
-    println!("{} {}", cli_kit::ansi::color_codes::red(5),cli_kit::ansi::color_codes::red_bold(5));
+    println!("{} {} {} {}", red(5), red_bold(5), green(5), green_bold(5));
 }
