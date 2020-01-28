@@ -21,7 +21,7 @@ pub fn red<T: ToString>(text: T, bold: bool) -> String {
     if bold {
         result = "\x1b[1m".to_owned() + &result;
     }
-    return result
+    return result;
 }
 
 /// Take an item that implements ToString and return in green
@@ -45,7 +45,7 @@ pub fn green<T: ToString>(text: T, bold: bool) -> String {
     if bold {
         result = "\x1b[1m".to_owned() + &result;
     }
-    return result
+    return result;
 }
 
 /// Take an item that implements ToString and return in yellow
@@ -69,7 +69,7 @@ pub fn yellow<T: ToString>(text: T, bold: bool) -> String {
     if bold {
         result = "\x1b[1m".to_owned() + &result;
     }
-    return result
+    return result;
 }
 
 /// Take an item that implements ToString and return in blue
@@ -92,6 +92,5 @@ pub fn blue<T: ToString>(text: T, bold: bool) -> String {
     if bold {
         result = "\x1b[1m".to_owned() + &result;
     }
-    return result
+    return result;
 }
-
