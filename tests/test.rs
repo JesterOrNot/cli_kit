@@ -39,10 +39,14 @@ mod tests {
     }
     #[test]
     fn test_blue() {
-        assert_eq!(blue(5, false), "\x1b[34m5\x1b[0m");
+        assert_eq!(blue(5, false, false), "\x1b[34m5\x1b[0m");
     }
     #[test]
     fn test_blue_bold() {
-        assert_eq!(blue(5, true), "\x1b[1m\x1b[34m5\x1b[0m");
+        assert_eq!(blue(5, true, false), "\x1b[1m\x1b[34m5\x1b[0m");
+    }
+    #[test]
+    fn test_blue_underline() {
+        assert_eq!(blue(5, false, true), "\x1b[4m\x1b[34m5\x1b[0m");
     }
 }
