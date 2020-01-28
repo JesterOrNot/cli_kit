@@ -5,3 +5,5 @@
 ![Crates.io](https://img.shields.io/crates/v/cli_kit?style=plastic)
 
 One stop shop for building a next gen terminal application
+
+This is a *heavy* WIP APIs can and **will** change
