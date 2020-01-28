@@ -8,4 +8,4 @@
 
 One stop shop for building a next gen terminal application
 
-This is a *heavy* WIP APIs can and **will** change
+This is a **heavy work in progress** APIs can and **will** change
