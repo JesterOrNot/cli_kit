@@ -11,7 +11,7 @@ github:
     addBadge: true
     branches: true
     pullRequestsFromForks: true
-    addLabel: prebuilt
+    addLabel: prebuilt-in-gitpod
 
 vscode:
   extensions:
