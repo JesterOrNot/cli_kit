@@ -1,6 +1,6 @@
 [package]
 name = "cli_kit"
-version = "0.1.0"
+version = "0.1.1"
 license = "MIT"
 description = "One stop shop for building a next gen terminal applications"
 homepage = "https://github.com/JesterOrNot/cli_kit"
