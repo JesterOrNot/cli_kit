@@ -5,8 +5,6 @@ tasks:
   - before: make test
     init: make build
     command: gosh
-  - env:
-      GOSH_HOME: /home/gitpod
 
 github:
   prebuilds:
