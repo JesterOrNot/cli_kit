@@ -11,6 +11,11 @@ One stop shop for building a next gen terminal application
 
 This is a **heavy work in progress** APIs can and **will** change
 
+## Usage
+To add this library to your project add the following to the dependencies section in your `Cargo.toml` file
+```TOML
+cli_kit = "0.1.1"
+```
 ## Contributing
 
 Run it in `Gitpod` it has all the tools you will need to run and contribute to this project!
