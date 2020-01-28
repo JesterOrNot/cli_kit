@@ -10,16 +10,21 @@ pub use std::string::ToString;
 /// use cli_kit::ansi::color_codes::red;
 ///
 /// fn main() {
+///     //underline
+///     println!("{}", red(5, false, true));
 ///     // bold
-///     println!("{}", red(5, true));
+///     println!("{}", red(5, true, false));
 ///     // normal
-///     println!("{}", red(5, false));
+///     println!("{}", red(5, false, false));
 /// }
 /// ```
-pub fn red<T: ToString>(text: T, bold: bool) -> String {
+pub fn red<T: ToString>(text: T, bold: bool, underline: bool) -> String {
     let mut result = String::from("\x1b[31m".to_owned() + &text.to_string() + "\x1b[0m");
     if bold {
         result = "\x1b[1m".to_owned() + &result;
+    }
+    if underline {
+        result = "\x1b[4m".to_owned() + &result;
     }
     return result;
 }
