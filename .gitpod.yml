@@ -1,6 +1,10 @@
+image:
+  file: .gitpod.Dockerfile
+
 tasks:
-  - init: cargo build --verbose
-    command: cargo test --verbose
+  - before: make test
+    init: make build
+    command: gosh
 
 github:
   prebuilds:
