@@ -1,6 +1,4 @@
-use cli_kit::ansi::color_codes::{
-    blue, blue_bold, green, red, yellow,
-};
+use cli_kit::ansi::color_codes::{blue, green, red, yellow};
 
 fn main() {
     println!(
@@ -11,8 +9,8 @@ fn main() {
         green(5, true),
         yellow(5, false),
         yellow(5, true),
-        blue(5),
-        blue_bold(5)
+        blue(5, false),
+        blue(5, true)
     );
     println!("{}", green("Hello World From Rust!", true))
 }
