@@ -114,3 +114,30 @@ pub fn blue<T: ToString>(text: T, bold: bool, underline: bool) -> String {
     }
     return result;
 }
+/// Take an item that implements ToString and return in magenta
+///
+/// Example
+///
+/// ```rust
+///
+/// use cli_kit::ansi::color_codes::magenta;
+///
+/// fn main() {
+///     // underline
+///     println!("{}", magenta(5, false, true));
+///     // bold
+///     println!("{}", magenta(5, true, false));
+///     // normal
+///     println!("{}", magenta(5, false, false))
+/// }
+/// ```
+pub fn magenta<T: ToString>(text: T, bold: bool, underline: bool) -> String {
+    let mut result = String::from("\x1b[35m".to_owned() + &text.to_string() + "\x1b[0m");
+    if bold {
+        result = "\x1b[1m".to_owned() + &result;
+    }
+    if underline {
+        result = "\x1b[4m".to_owned() + &result;
+    }
+    return result;
+}
