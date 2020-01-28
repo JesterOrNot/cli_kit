@@ -1,6 +1,10 @@
 [package]
 name = "cli_kit"
 version = "0.1.0"
+license = "MIT"
+description = "One stop shop for building a next gen terminal applications"
+homepage = "https://github.com/JesterOrNot/cli_kit"
+repository = "https://github.com/JesterOrNot/cli_kit"
 authors = ["Sean Hellum <seanhellum45@gmail.com>"]
 edition = "2018"
 
