@@ -1,12 +1,12 @@
 use cli_kit::ansi::color_codes::{
-    blue, blue_bold, green, green_bold, red, red_bold, yellow, yellow_bold,
+    blue, blue_bold, green, green_bold, red, yellow, yellow_bold,
 };
 
 fn main() {
     println!(
         "{} {} {} {} {} {} {} {}",
-        red(5),
-        red_bold(5),
+        red(5, false),
+        red(5, true),
         green(5),
         green_bold(5),
         yellow(5),

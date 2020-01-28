@@ -1,6 +1,7 @@
 pub use std::string::ToString;
 
 /// Take an item that implements ToString and return in red
+/// The second paramater is if it is bold true for bold false for nomal
 ///
 /// Example
 ///
@@ -9,27 +10,18 @@ pub use std::string::ToString;
 /// use cli_kit::ansi::color_codes::red;
 ///
 /// fn main() {
-///     println!("{}", red(5));
+///     // bold
+///     println!("{}", red(5, true));
+///     // normal
+///     println!("{}", red(5, false));
 /// }
 /// ```
-pub fn red<T: ToString>(text: T) -> String {
-    "\x1b[31m".to_owned() + &text.to_string() + "\x1b[0m"
-}
-
-/// Take an item that implements ToString and return in red bold
-///
-/// Example
-///
-/// ```rust
-///
-/// use cli_kit::ansi::color_codes::red_bold;
-///
-/// fn main() {
-///     println!("{}", red_bold(5));
-/// }
-/// ```
-pub fn red_bold<T: ToString>(text: T) -> String {
-    "\x1b[1;31m".to_owned() + &text.to_string() + "\x1b[0m"
+pub fn red<T: ToString>(text: T, bold: bool) -> String {
+    let mut result = String::from("\x1b[31m".to_owned() + &text.to_string() + "\x1b[0m");
+    if bold {
+        result = "\x1b[1m".to_owned() + &result;
+    }
+    return result
 }
 
 /// Take an item that implements ToString and return in green
