@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["hide_cursor","Hides the cursor by printing ANSI escape sequence"],["show_cursor","Shows the cursor by printing ANSI escape sequence"]]});

@@ -22,5 +22,8 @@ fn main() {
         cyan(5, true, false),
         cyan(5, false, true)
     );
-    println!("{}", green("Hello World From Rust!", true, true))
+    println!("{}", green("Hello World From Rust!", true, true));
+    cli_kit::ansi::cursor::hide_cursor();
+    std::thread::sleep(std::time::Duration::from_secs(1));
+    cli_kit::ansi::cursor::show_cursor()
 }
