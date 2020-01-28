@@ -1,2 +1,2 @@
 language = "rust"
-run = "cargo build"
+run = "cargo build && make test && make example"
