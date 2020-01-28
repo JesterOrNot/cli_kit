@@ -5,6 +5,7 @@
 ![Crates.io](https://img.shields.io/crates/v/cli_kit)
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Run on Repl.it](https://repl.it/badge/github/JesterOrNot/cli_kit)](https://repl.it/github/JesterOrNot/cli_kit)
+![GitHub repo size](https://img.shields.io/github/repo-size/JesterOrNot/cli_kit)
 
 One stop shop for building a next gen terminal application
 
