@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use cli_kit::ansi::color_codes::{blue, green, magenta, red, yellow};
+    use cli_kit::ansi::color_codes::{blue, cyan, green, magenta, red, yellow};
     #[test]
     fn test_red() {
         assert_eq!(red(5, false, false), "\x1b[31m5\x1b[0m");
@@ -60,5 +60,17 @@ mod tests {
     #[test]
     fn test_magenta_underline() {
         assert_eq!(magenta(5, false, true), "\x1b[4m\x1b[35m5\x1b[0m");
+    }
+    #[test]
+    fn test_cyan() {
+        assert_eq!(cyan(5, false, false), "\x1b[36m5\x1b[0m");
+    }
+    #[test]
+    fn test_cyan_bold() {
+        assert_eq!(cyan(5, true, false), "\x1b[1m\x1b[36m5\x1b[0m");
+    }
+    #[test]
+    fn test_cyan_underline() {
+        assert_eq!(cyan(5, false, true), "\x1b[4m\x1b[36m5\x1b[0m");
     }
 }
