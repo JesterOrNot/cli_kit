@@ -49,6 +49,7 @@ pub fn green<T: ToString>(text: T, bold: bool) -> String {
 }
 
 /// Take an item that implements ToString and return in yellow
+/// The second paramater is if it is bold true for bold false for nomal
 ///
 /// Example
 ///
@@ -57,27 +58,18 @@ pub fn green<T: ToString>(text: T, bold: bool) -> String {
 /// use cli_kit::ansi::color_codes::yellow;
 ///
 /// fn main() {
-///     println!("{}", yellow(5));
+///     // bold
+///     println!("{}", yellow(5, true));
+///     // normal
+///     println!("{}", yellow(5, false));
 /// }
 /// ```
-pub fn yellow<T: ToString>(text: T) -> String {
-    "\x1b[33m".to_owned() + &text.to_string() + "\x1b[0m"
-}
-
-/// Take an item that implements ToString and return in yellow bold
-///
-/// Example
-///
-/// ```rust
-///
-/// use cli_kit::ansi::color_codes::yellow_bold;
-///
-/// fn main() {
-///     println!("{}", yellow_bold(5));
-/// }
-/// ```
-pub fn yellow_bold<T: ToString>(text: T) -> String {
-    "\x1b[1;33m".to_owned() + &text.to_string() + "\x1b[0m"
+pub fn yellow<T: ToString>(text: T, bold: bool) -> String {
+    let mut result = String::from("\x1b[33m".to_owned() + &text.to_string() + "\x1b[0m");
+    if bold {
+        result = "\x1b[1m".to_owned() + &result;
+    }
+    return result
 }
 
 /// Take an item that implements ToString and return in blue

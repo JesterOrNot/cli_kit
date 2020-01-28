@@ -1,5 +1,5 @@
 use cli_kit::ansi::color_codes::{
-    blue, blue_bold, green, red, yellow, yellow_bold,
+    blue, blue_bold, green, red, yellow,
 };
 
 fn main() {
@@ -9,8 +9,8 @@ fn main() {
         red(5, true),
         green(5, false),
         green(5, true),
-        yellow(5),
-        yellow_bold(5),
+        yellow(5, false),
+        yellow(5, true),
         blue(5),
         blue_bold(5)
     );

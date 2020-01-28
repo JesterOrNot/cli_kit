@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {
     use cli_kit::ansi::color_codes::{
-        blue, blue_bold, green, red, yellow, yellow_bold,
+        blue, blue_bold, green, red, yellow
     };
     #[test]
     fn test_red() {
@@ -21,11 +21,11 @@ mod tests {
     }
     #[test]
     fn test_yellow() {
-        assert_eq!(yellow(5), "\x1b[33m5\x1b[0m");
+        assert_eq!(yellow(5, false), "\x1b[33m5\x1b[0m");
     }
     #[test]
     fn test_yellow_bold() {
-        assert_eq!(yellow_bold(5), "\x1b[1;33m5\x1b[0m");
+        assert_eq!(yellow(5, true), "\x1b[1m\x1b[33m5\x1b[0m");
     }
     #[test]
     fn test_blue() {
