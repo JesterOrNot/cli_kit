@@ -41,7 +41,7 @@ fn lex(input: &String) -> Result<Vec<LexItem>, String> {
     let mut it = input.chars().peekable();
     while let Some(&c) = it.peek() {
         match c {
-            '0'...'9' => {
+            '0'..='9' => {
                 it.next();
                 result.push(LexItem::Num(c));
             }
