@@ -20,7 +20,7 @@ impl From<LexItem> for String {
     fn from(item: LexItem) -> Self {
         match item {
             LexItem::Char(i) => i.to_string(),
-            LexItem::Whitespace(i) => String::from(" "),
+            LexItem::Whitespace(_) => String::from(" "),
             _ => String::from(""),
         }
     }
