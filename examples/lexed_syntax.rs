@@ -23,7 +23,19 @@ fn main() {
                 LexItem::Num(n) => colored_version += &magenta(n, false, false).to_string(),
                 LexItem::Op(n) => colored_version += &cyan(n, false, false).to_string(),
                 LexItem::Paren(n) => colored_version += &green(n, false, false).to_string(),
-                LexItem::Whitespace(_) | LexItem::Char(_) => colored_version += &String::from(i),
+                LexItem::Whitespace(_) => colored_version += &String::from(i),
+                LexItem::Char(_) => {
+                    let f = match character {
+                        13 => {
+                            writeln!(stdout, "\x1b[1000D");
+                            colored_version = "".to_string();
+                            stdout.flush().unwrap();
+                            String::from("")
+                        },
+                        _ => String::from(i).to_string()
+                    };
+                    colored_version += &f
+                }
             };
         }
         write!(stdout, "\r{}", &colored_version).unwrap();
